@@ -55,7 +55,10 @@ erDiagram
         text Clinical_Notes
     }
 
-<img width="3774" height="4071" alt="City Patient Visit-2026-03-31-091708 (1)" src="https://github.com/user-attachments/assets/e807b2a0-e1c8-42b4-9240-e7bc96b623e3" />
+
+
+<img src="https://github.com/user-attachments/assets/e807b2a0-e1c8-42b4-9240-e7bc96b623e3" width="400" alt="City Patient Visit">
+
 
 
 
