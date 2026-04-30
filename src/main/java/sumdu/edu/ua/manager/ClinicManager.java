@@ -103,6 +103,17 @@ public class ClinicManager {
     }
 
     /**
+     * Deletes patient by id.
+     *
+     * @param patientId patient identifier
+     * @return true if patient was deleted
+     * @throws Exception if database operation fails
+     */
+    public boolean deletePatient(int patientId) throws Exception {
+        return patientDatabase.deleteById(patientId);
+    }
+
+    /**
      * Returns all cities.
      *
      * @return city list
@@ -166,6 +177,17 @@ public class ClinicManager {
      */
     public int createVisit(int patientId, int diagnosisId, LocalDate visitDate, String clinicalNotes) throws Exception {
         return visitDatabase.create(patientId, diagnosisId, visitDate, clinicalNotes);
+    }
+
+    /**
+     * Deletes visit by id.
+     *
+     * @param visitId visit identifier
+     * @return true if visit was deleted
+     * @throws Exception if database operation fails
+     */
+    public boolean deleteVisit(int visitId) throws Exception {
+        return visitDatabase.deleteById(visitId);
     }
 
 }

@@ -162,6 +162,22 @@ public class PatientDatabase {
         }
     }
 
+    /**
+     * Deletes patient by id.
+     *
+     * @param patientId patient id
+     * @return true if patient was deleted
+     * @throws Exception if database operation fails
+     */
+    public boolean deleteById(int patientId) throws Exception {
+        String sql = "DELETE FROM PATIENT WHERE PatientId = ?";
+
+        try (Connection connection = databaseManager.getConnection(); PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, patientId);
+            return statement.executeUpdate() > 0;
+        }
+    }
+
     private List<Patient> searchBySingleTextParameter(String sql, String value) throws Exception {
         try (Connection connection = databaseManager.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
