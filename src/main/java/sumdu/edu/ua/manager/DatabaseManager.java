@@ -1,4 +1,4 @@
-package sumdu.edu.ua;
+package sumdu.edu.ua.manager;
 
 import java.io.FileInputStream;
 import java.io.IOException;

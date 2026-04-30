@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import sumdu.edu.ua.DatabaseManager;
+import sumdu.edu.ua.manager.DatabaseManager;
 import sumdu.edu.ua.model.City;
 
 /**

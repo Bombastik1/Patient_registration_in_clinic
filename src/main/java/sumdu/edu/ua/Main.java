@@ -10,6 +10,7 @@ import sumdu.edu.ua.database.CityDatabase;
 import sumdu.edu.ua.database.DiagnosisDatabase;
 import sumdu.edu.ua.database.PatientDatabase;
 import sumdu.edu.ua.database.VisitDatabase;
+import sumdu.edu.ua.manager.DatabaseManager;
 import sumdu.edu.ua.model.City;
 import sumdu.edu.ua.model.Diagnosis;
 import sumdu.edu.ua.model.Patient;
@@ -81,17 +82,17 @@ public class Main {
 
     private static void printMenu() {
         System.out.println("\nМЕНЮ");
-        System.out.println("1 Показати всіх пацієнтів");
-        System.out.println("2 Пошук пацієнтів");
-        System.out.println("3 Додати пацієнта");
-        System.out.println("4 Оновити пацієнта");
-        System.out.println("5 Показати всі візити");
-        System.out.println("6 Додати візит");
-        System.out.println("7 Показати міста");
-        System.out.println("8 Додати місто");
-        System.out.println("9 Показати діагнози");
-        System.out.println("10 Додати діагноз");
-        System.out.println("0 Вихід");
+        System.out.println("1. Показати всіх пацієнтів");
+        System.out.println("2. Пошук пацієнтів");
+        System.out.println("3. Додати пацієнта");
+        System.out.println("4. Оновити пацієнта");
+        System.out.println("5. Показати всі візити");
+        System.out.println("6. Додати візит");
+        System.out.println("7. Показати міста");
+        System.out.println("8. Додати місто");
+        System.out.println("9. Показати діагнози");
+        System.out.println("10. Додати діагноз");
+        System.out.println("0. Вихід");
     }
 
     private static void searchPatients(Scanner scanner, ClinicManager clinicManager) throws Exception {
@@ -161,11 +162,11 @@ public class Main {
         while (true) {
             System.out.println("\nОберіть місто:");
             printCities(clinicManager.getAllCities());
-            System.out.println("0 Додати нове місто");
+            System.out.println("0. Додати нове місто");
             int cityId = readInt(scanner, "Ваш вибір: ");
 
             if (cityId == 0) {
-                String cityName = readNonEmptyString(scanner, "Введіть назва нового міста: ");
+                String cityName = readNonEmptyString(scanner, "Введіть назву нового міста: ");
                 int generatedId = clinicManager.createCity(cityName);
                 System.out.println("Місто додано ID = " + generatedId);
                 return generatedId;
@@ -187,7 +188,7 @@ public class Main {
             int diagnosisId = readInt(scanner, "Ваш вибір: ");
 
             if (diagnosisId == 0) {
-                String diagnosisName = readNonEmptyString(scanner, "Введіть назва нового діагнозу: ");
+                String diagnosisName = readNonEmptyString(scanner, "Введіть назву нового діагнозу: ");
                 int generatedId = clinicManager.createDiagnosis(diagnosisName);
                 System.out.println("Діагноз додано його ID є " + generatedId);
                 return generatedId;
