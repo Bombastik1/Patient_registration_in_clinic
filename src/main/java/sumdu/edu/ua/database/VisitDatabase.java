@@ -84,6 +84,22 @@ public class VisitDatabase {
         }
     }
 
+    /**
+     * Deletes visit by id.
+     *
+     * @param visitId visit id
+     * @return true if visit was deleted
+     * @throws Exception if database operation fails
+     */
+    public boolean deleteById(int visitId) throws Exception {
+        String sql = "DELETE FROM VISIT WHERE VisitId = ?";
+
+        try (Connection connection = databaseManager.getConnection(); PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, visitId);
+            return statement.executeUpdate() > 0;
+        }
+    }
+
     private List<VisitDetails> mapVisitDetails(ResultSet resultSet) throws SQLException {
         List<VisitDetails> visits = new ArrayList<>();
 

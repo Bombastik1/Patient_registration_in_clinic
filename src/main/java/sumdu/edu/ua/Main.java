@@ -60,12 +60,14 @@ public class Main {
                     case 2 -> searchPatients(scanner, clinicManager);
                     case 3 -> createPatient(scanner, clinicManager);
                     case 4 -> updatePatient(scanner, clinicManager);
-                    case 5 -> printVisits(clinicManager.getAllVisits());
-                    case 6 -> createVisit(scanner, clinicManager);
-                    case 7 -> printCities(clinicManager.getAllCities());
-                    case 8 -> createCity(scanner, clinicManager);
-                    case 9 -> printDiagnoses(clinicManager.getAllDiagnoses());
-                    case 10 -> createDiagnosis(scanner, clinicManager);
+                    case 5 -> deletePatient(scanner, clinicManager);
+                    case 6 -> printVisits(clinicManager.getAllVisits());
+                    case 7 -> createVisit(scanner, clinicManager);
+                    case 8 -> deleteVisit(scanner, clinicManager);
+                    case 9 -> printCities(clinicManager.getAllCities());
+                    case 10 -> createCity(scanner, clinicManager);
+                    case 11 -> printDiagnoses(clinicManager.getAllDiagnoses());
+                    case 12 -> createDiagnosis(scanner, clinicManager);
                     case 0 -> {
                         running = false;
                         System.out.println("Вихід з програми");
@@ -86,12 +88,14 @@ public class Main {
         System.out.println("2. Пошук пацієнтів");
         System.out.println("3. Додати пацієнта");
         System.out.println("4. Оновити пацієнта");
-        System.out.println("5. Показати всі візити");
-        System.out.println("6. Додати візит");
-        System.out.println("7. Показати міста");
-        System.out.println("8. Додати місто");
-        System.out.println("9. Показати діагнози");
-        System.out.println("10. Додати діагноз");
+        System.out.println("5. Видалити пацієнта");
+        System.out.println("6. Показати всі візити");
+        System.out.println("7. Додати візит");
+        System.out.println("8. Видалити візит");
+        System.out.println("9. Показати міста");
+        System.out.println("10. Додати місто");
+        System.out.println("11. Показати діагнози");
+        System.out.println("12. Додати діагноз");
         System.out.println("0. Вихід");
     }
 
@@ -199,6 +203,26 @@ public class Main {
             }
 
             System.out.println("Діагноз з таким ID не знайдено");
+        }
+    }
+
+    private static void deletePatient(Scanner scanner, ClinicManager clinicManager) throws Exception {
+        int patientId = readInt(scanner, "Введіть PatientId для видалення: ");
+
+        if (clinicManager.deletePatient(patientId)) {
+            System.out.println("Пацієнта видалено");
+        } else {
+            System.out.println("Пацієнта з таким ID не знайдено");
+        }
+    }
+
+    private static void deleteVisit(Scanner scanner, ClinicManager clinicManager) throws Exception {
+        int visitId = readInt(scanner, "Введіть VisitId для видалення: ");
+
+        if (clinicManager.deleteVisit(visitId)) {
+            System.out.println("Візит видалено");
+        } else {
+            System.out.println("Візит з таким ID не знайдено");
         }
     }
 
