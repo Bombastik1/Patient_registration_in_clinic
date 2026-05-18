@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"sumdu.edu.ua"},{"l":"sumdu.edu.ua.database"},{"l":"sumdu.edu.ua.manager"},{"l":"sumdu.edu.ua.model"}];updateSearchResults();
